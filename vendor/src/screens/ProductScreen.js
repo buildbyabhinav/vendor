@@ -1,6 +1,6 @@
 import {Link} from 'react-router-dom';
 import { Row, Col, Image, ListGroup, Button, Card, ListGroupItem } from 'react-bootstrap';
-import products from '../product';
+import products from '../../../api/data/product';
 
 export default function ProductScreen({match}){
     const product = products.find((p) => p._id == match.params.id)

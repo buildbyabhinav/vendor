@@ -4,6 +4,7 @@ import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import { FaShoppingCart, FaUser} from 'react-icons/fa'
 
 const Header = () => {
   return (
@@ -18,8 +19,8 @@ const Header = () => {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <Nav.Link href="#action1">Cart</Nav.Link>
-            <Nav.Link href="#action2">Login</Nav.Link>
+            <Nav.Link href="#action1"><FaShoppingCart/>Cart</Nav.Link>
+            <Nav.Link href="#action2"><FaUser/>Login</Nav.Link>
             <NavDropdown title="Link" id="navbarScrollingDropdown">
               <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action4">
