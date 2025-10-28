@@ -14,8 +14,7 @@ function App() {
           <Outlet/>
         </Container>
       </main>
-      <HomeScreen/>
-    </div>
+          </div>
   );
 }
 

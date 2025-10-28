@@ -11,12 +11,14 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import HomeScreen from './screens/HomeScreen';
 import ProductScreen from './screens/ProductScreen';
+import CartScreen from './screens/CartScreen';
 
 const router = createBrowserRouter([
   {path:'/', element:<App/>,
     children:[
       {path:'/', element: <HomeScreen/>},
-      {path:'/products/:id', element: <ProductScreen/>}
+      {path:'/products/:id', element: <ProductScreen/>},
+      {path:'/cart/:id?', element:<CartScreen/>}
     ]
   },
 
