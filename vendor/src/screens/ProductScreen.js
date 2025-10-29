@@ -16,12 +16,11 @@ import Message from "../components/Message";
 import { listProductDetails } from "../actions/productActions";
 
 function ProductScreen() {
-
   const [qty, setQty] = useState(1);
 
   const { id } = useParams();
   const dispatch = useDispatch();
-  const navigate= useNavigate();
+  const navigate = useNavigate();
 
   const productDetails = useSelector((state) => state.productDetails);
   const { loading, error, product } = productDetails;
@@ -30,9 +29,9 @@ function ProductScreen() {
     dispatch(listProductDetails(id));
   }, [dispatch, id]);
 
-  function addToCartHandler(){
-    console.log('Added to cart')
-    navigate(`/cart/${id}?qty=${qty}`)
+  function addToCartHandler() {
+    console.log("Added to cart");
+    navigate(`/cart/${id}?qty=${qty}`);
   }
 
   return (
@@ -96,8 +95,12 @@ function ProductScreen() {
                     <ListGroup.Item>
                       <Row>
                         <Col>Qty</Col>
-                        <Col xs='auto' className="my-1" >
-                          <Form.Control as="select" value={qty} onChange={e => e.target.value}>
+                        <Col xs="auto" className="my-1">
+                          <Form.Control
+                            as="select"
+                            value={qty}
+                            onChange={(e) => setQty(e.target.value)}
+                          >
                             {[...Array(product.countInStock).keys()].map(
                               (x) => (
                                 <option key={x + 1} value={x + 1}>
@@ -113,11 +116,13 @@ function ProductScreen() {
 
                   <ListGroup.Item>
                     <Button
-                    onClick={addToCartHandler}
-                    className="btn-block"
-                    disabled={product.countInStock===0}
-                    type='button'
-                    >Add To Cart</Button>
+                      onClick={addToCartHandler}
+                      className="btn-block"
+                      disabled={product.countInStock === 0}
+                      type="button"
+                    >
+                      Add To Cart
+                    </Button>
                   </ListGroup.Item>
                 </ListGroup>
               </Card>
